@@ -15,6 +15,7 @@ https://public.tableau.com/app/profile/rais.nugroho/viz/FinalProject_17325454357
 
 # LINK COLAB
 
+https://colab.research.google.com/drive/1NymVKCnhfQPVJpsJKunie3wUz5EZKcu_?usp=sharing
 
 
 # CONTEXT
