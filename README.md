@@ -81,6 +81,8 @@ Model akan dilatih menggunakan set data latih yang telah dipreproses, dengan pen
 
 # EVALUATION METRICS
 
+![Evaluation Metrics](https://github.com/PurwadhikaDev/DeltaGroup_JC_DS_OL_15_FinalProject/blob/main/Image.jpeg)
+
 - Type 1 error : False Positive
 Konsekuensi: sia-sianya biaya kampanye, waktu dan sumber daya
 - Type 2 error : False Negative
