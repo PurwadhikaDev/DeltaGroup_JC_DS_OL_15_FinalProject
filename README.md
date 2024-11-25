@@ -1,4 +1,4 @@
-KELOMPOK DELTA
+# KELOMPOK DELTA
 
 Anggota:
 
@@ -9,17 +9,20 @@ Anggota:
 - Muhammad Amin Rais Nugroho - JCDSOL-015-002
 
 
-LINK TABLEAU
+# LINK TABLEAU
 
 https://public.tableau.com/app/profile/rais.nugroho/viz/FinalProject_17325454357820/DashboardAutoInsurance
 
-LINK COLAB
+# LINK COLAB
+
 
 
 # CONTEXT
 
 Dataset AutoInsurance menghimpun informasi terkait dengan pelanggan asuransi otomotif dan digunakan untuk menganalisis faktor-faktor yang mempengaruhi perilaku pelanggan serta kinerja polis asuransi. Data ini mencakup berbagai atribut seperti status pekerjaan, jenis kelamin, pendapatan tahunan, status perkawinan, jumlah premi bulanan, jumlah klaim, dan banyak lagi. Dataset ini sering digunakan untuk memodelkan dan memprediksi perilaku pelanggan, seperti respons terhadap penawaran perpanjangan polis, serta untuk mengevaluasi faktor-faktor yang mempengaruhi keputusan pembelian asuransi.
+
 Dataset ini sering digunakan dalam berbagai studi dan analisis oleh perusahaan asuransi untuk memahami lebih baik tentang dinamika pasar dan preferensi pelanggan, terutama dalam mengidentifikasi segmen pelanggan yang lebih mungkin merespon positif terhadap kampanye pemasaran. Sebagai pemangku kepentingan utama, perusahaan asuransi memanfaatkan wawasan dari data ini untuk merancang produk asuransi yang lebih efektif dan mengembangkan strategi pemasaran yang lebih terarah. Informasi yang terkandung dalam dataset ini berasal dari data pelanggan nyata dan mencakup berbagai fitur terkait dengan profil pelanggan dan detail polis asuransi, menjadikannya sumber yang kaya untuk mengajarkan dasar-dasar analisis data dan machine learning dalam konteks asuransi otomotif.
+
 Melalui analisis ini, perusahaan asuransi dapat mengidentifikasi pola dalam perilaku pelanggan yang dapat membantu dalam pengambilan keputusan strategis dan operasional, serta dalam peningkatan kepuasan dan retensi pelanggan. Khususnya, analisis terfokus pada pelanggan yang merespon 'Yes' memungkinkan perusahaan untuk secara efektif menargetkan dan mengoptimalkan kampanye pemasaran mereka. Dataset ini tidak hanya mengungkapkan pola dalam perilaku pelanggan tetapi juga memberikan perusahaan asuransi kemampuan untuk menyesuaikan tawaran mereka dengan lebih baik, sehingga meningkatkan efektivitas penjualan dan efisiensi operasional. Dengan memahami faktor-faktor yang mendorong pelanggan untuk merespon positif, perusahaan dapat merancang kampanye yang lebih menarik dan relevan yang meningkatkan tingkat partisipasi dan konversi.
 
 
@@ -122,8 +125,150 @@ Kinerja model prediktif akan dievaluasi menggunakan metrik evaluasi klasifikasi 
 | 23 | Vehicle Class               | object    | Kelas kendaraan yang diasuransikan (misalnya, Two-Door Car, Four-Door Car, SUV).                |
 | 24 | Vehicle Size                | object    | Ukuran kendaraan yang diasuransikan (misalnya, Small, Medsize, Large).                          |
 
-LIMITASI
+# LIMITASI
 
-KESIMPULAN
+| Feature | Range |
+|---|---|
+| Policy | Corporate L1-L3, Personal L1-L3, Special L1-L3|
+| Vehicle Class | Two-Door Car, Four-Door Car, SUV, Luxury SUV, Sports Car, Luxury Car |
+| Education | Bachelor - Doctor |
+| State | Washington, Arizona, Nevada, California, Oregon |
+| EmploymentStatus | Employed, Unemployed, Medical Leave, Disabled, Retired |
+| Renew Offer Type | Offer1 - Offer4 |
+| Sales Channel | Agent, Call Center, Web, Branch |
+| Marital Status | Married, Single, Divorced |
+| Location Code | Suburban, Rural, Urban |
+| Coverage | Basic, Extended, Premium
+| Policy Type | Corporate Auto, Personal Auto, Special Auto |
+| Vehicle Size | Medsize, Small, Large |
+| Gender | F, M |
+| Response | No, Yes |
+| Number of Open Complaints | 0 - 5 |
+| Number of Policies | 1 - 9 |
+| Months Since Last Claim | 0 - 35 |
+| Months Since Policy Inception | 0 - 99 |
+| Monthly Premium Auto | 61 - 298 |
+| Total Claim Amount | 0.099 - 2893.23 |
+| Income | 0 - 99981 |
+| Customer Lifetime Value | 1898 - 83325 |
 
-REKOMENDASI
+**Kesimpulan dan Limitasi dari Fitur yang Digunakan dalam Model**
+
+Dalam pengembangan model prediktif untuk industri asuransi kendaraan, kami telah menggunakan 22 fitur yang telah ditentukan dengan rentang spesifik. Berikut adalah kesimpulan dan batasan yang terkait dengan fitur-fitur tersebut:
+
+1. **Rentang Fitur yang Ditentukan**:
+   - Model telah dilatih menggunakan data yang berada dalam rentang tertentu untuk setiap fitur, seperti yang dijelaskan dalam tabel. Jika data masukan baru berada di luar rentang ini, model mungkin tidak dapat memberikan prediksi yang akurat. Misalnya, jika 'Monthly Premium Auto' melebihi 298 atau 'Income' di atas 99981, model mungkin tidak memiliki informasi yang cukup untuk menilai kondisi ini dengan benar, yang dapat menyebabkan prediksi yang tidak tepat.
+
+2. **Ketergantungan pada Fitur Tertentu**:
+   - Fitur seperti 'Policy', 'Vehicle Class', dan 'State' memiliki kategori yang jelas dan terbatas. Setiap perubahan dalam definisi atau penambahan kategori baru dalam fitur-fitur ini memerlukan pelatihan ulang model untuk memasukkan pemahaman tentang variabel baru tersebut.
+
+3. **Adaptasi dengan Industri Lain**:
+   - Model ini secara khusus dilatih dengan data dari industri asuransi kendaraan. Mengaplikasikan model ini pada industri lain, seperti asuransi kesehatan atau properti, tanpa modifikasi yang signifikan mungkin tidak efektif. Hal ini disebabkan oleh perbedaan dalam faktor-faktor yang mempengaruhi keputusan di berbagai industri.
+
+4. **Pembaruan dan Pemeliharaan Model**:
+   - Untuk memastikan bahwa model tetap relevan dan akurat, penting untuk melakukan pembaruan dan pelatihan ulang secara berkala. Ini termasuk memperbarui model dengan data terbaru dan menyesuaikan model untuk mengakomodasi perubahan dalam tren pasar atau kebijakan perusahaan.
+
+5. **Penggunaan dalam Kondisi Operasional Nyata**:
+   - Saat menerapkan model dalam operasi nyata, penting untuk memonitor performa model secara kontinu dan siap untuk melakukan penyesuaian jika diperlukan. Pengawasan ini membantu mengidentifikasi kapan model mulai kehilangan presisi atau kapan perubahan pasar mempengaruhi asumsi yang digunakan dalam pelatihan model.
+
+Kesimpulannya, sementara model ini menawarkan alat yang berharga untuk prediksi dalam konteks asuransi kendaraan, ada beberapa batasan dan pertimbangan yang harus diperhatikan untuk memaksimalkan efektivitasnya. Memahami dan mengelola batasan ini adalah kunci untuk berhasil menerapkan model prediktif dalam praktik bisnis.
+
+# KESIMPULAN
+
+## **Kesimpulan**
+
+Analisis yang dilakukan menggunakan data asuransi otomatis untuk memprediksi respons nasabah terhadap kampanye telah menunjukkan bahwa model **XGBoost Classifier** memberikan performa yang sangat baik.
+
+**Berikut adalah beberapa poin kunci dari hasil analisis yang lebih mendalam :**
+
+1. **Recall Tinggi (0.9943)**: Model ini berhasil mengidentifikasi 99.43% dari semua kasus positif (respons yes) yang sebenarnya, menunjukkan efektivitas model dalam menangkap respons positif yang krusial dalam konteks kampanye pemasaran. Ini penting karena memastikan bahwa peluang untuk menjangkau pelanggan yang berpotensi merespon positif tidak terlewatkan.
+
+2. **Precision Tinggi (0.9577)**: Tingkat presisi yang tinggi ini menunjukkan bahwa hampir semua prediksi positif yang dibuat oleh model adalah akurat. Ini mengurangi risiko mengganggu pelanggan dengan komunikasi yang tidak relevan, yang dapat berdampak negatif pada reputasi merek dan kepuasan pelanggan.
+
+3. **F1 Score (0.9756)**: Skor F1 yang tinggi menunjukkan keseimbangan yang sangat baik antara recall dan precision. Hal ini menunjukkan bahwa model ini sangat robust dalam mengidentifikasi pelanggan yang benar-benar berpotensi merespon positif, tanpa mengorbankan akurasi atau menghasilkan banyak kesalahan positif.
+
+4. **Accuracy Tinggi (0.9929)**: Akurasi yang sangat tinggi menunjukkan bahwa model berhasil mengklasifikasikan respons secara keseluruhan dengan sangat baik, tanpa ada prediksi yang salah dari seluruh dataset. Ini menunjukkan keandalan model dalam penggunaan praktis untuk kampanye pemasaran.
+
+5. **Insight dari Data**: Analisis lebih lanjut menunjukkan bahwa fitur seperti Policy, Policy Type, dan Vehicle Class memiliki pengaruh besar terhadap prediksi model. Ini mengindikasikan pentingnya faktor-faktor ini dalam memahami perilaku pelanggan dan merancang kampanye yang lebih tepat sasaran.
+
+**Parameter Terbaik Untuk Tuning**
+
+Pada project ini, penggunaan model XGBoost Classifier yang dioptimalkan melalui teknik Grid Search dengan parameter terpilih bootstrap: True, max_depth: None, max_features: auto, min_samples_leaf: 1, min_samples_split: 2, n_estimators: 200, telah terbukti sangat efektif dalam memprediksi respons nasabah terhadap kampanye asuransi kendaraan. Dengan akurasi yang mencapai 0.99, model ini memberikan wawasan yang sangat akurat mengenai pelanggan yang kemungkinan besar akan merespon Yes terhadap tawaran kampanye.
+
+**Penjelasan Estimasi Keuntungan**
+
+Penerapan model ini secara signifikan meningkatkan efisiensi penggunaan sumber daya pemasaran. Dengan fokus hanya pada pelanggan yang diprediksi akan merespon positif, perusahaan berhasil mengurangi biaya kampanye secara drastis dari \$14.616 menjadi hanya \$2.096. Ini menghasilkan peningkatan keuntungan bersih dari \$40.928 menjadi \$53.448, memberikan peningkatan keuntungan sebesar \$12.520.
+
+**Kesimpulan Dari Project**
+
+Implementasi model ini tidak hanya membawa efisiensi biaya yang lebih besar tetapi juga memungkinkan perusahaan untuk lebih personal dalam pendekatannya, meningkatkan kepuasan pelanggan dan kemungkinan retensi pelanggan jangka panjang. Dengan menargetkan pelanggan yang paling mungkin merespon, perusahaan dapat mengalokasikan sumber daya untuk mengembangkan tawaran yang lebih menarik dan komunikasi yang lebih relevan, yang pada akhirnya memperkuat hubungan pelanggan.
+
+Kesimpulan dari project ini menunjukkan pentingnya integrasi teknologi Machine Learning dalam strategi pemasaran modern. Model prediktif seperti XGBoost Classifier membantu perusahaan asuransi kendaraan untuk tidak hanya mengoptimalkan kampanye mereka dari segi biaya tetapi juga dalam membangun hubungan yang lebih kuat dan lebih pribadi dengan pelanggan. Ke depan, perusahaan harus terus menerapkan dan menyempurnakan teknologi ini, serta mengeksplorasi aplikasi serupa dalam operasi lain untuk terus meningkatkan efektivitas dan efisiensi operasional.
+
+Dengan memanfaatkan kekuatan model XGBoost Classifier dan mengintegrasikan hasil analisis ini ke dalam strategi bisnis, perusahaan asuransi dapat meningkatkan efektivitas kampanye mereka, terutama dalam menargetkan pelanggan yang paling mungkin merespon yes. Pendekatan yang berbasis data ini memungkinkan adaptasi yang lebih cepat terhadap perubahan kebutuhan dan perilaku pelanggan, memastikan bahwa strategi yang diimplementasikan selalu relevan dan efektif dalam mencapai pelanggan yang berpotensi merespon positif terhadap tawaran kampanye.
+
+
+**Strategi Campaign**
+
+Strategi campaign akan difokuskan dan diprioritaskan berdasarkan jumlah respons "Yes" terbanyak dari setiap segmen analisis. Berikut adalah strategi campaign yang direkomendasikan berdasarkan karakteristik dan perilaku pelanggan:
+
+- **Berdasarkan Karakteristik Pelanggan**:
+  - **Gender**: Mengimplementasikan pendekatan pemasaran yang lebih emosional dan membangun rasa komunitas untuk mendorong respons positif dari pelanggan wanita.
+  - **Status Perkawinan**: Menawarkan paket keluarga dengan manfaat tambahan seperti perlindungan untuk anak atau pasangan bagi pelanggan yang sudah menikah, menekankan keamanan dan perlindungan keluarga.
+  - **Lokasi**: Fokus pada kampanye di California dan Oregon, di mana terdapat kecenderungan respons positif yang tinggi, dengan menawarkan produk yang menyesuaikan dengan risiko lokal yang lebih besar.
+  - **Status Pekerjaan**: Menargetkan pelanggan yang bekerja (Employed) dengan manfaat yang menonjolkan investasi jangka panjang dan keamanan finansial.
+  - **Pendidikan**: Menargetkan pelanggan dengan pendidikan tingkat Bachelor dan lebih tinggi dengan menekankan nilai dan manfaat jangka panjang dari produk asuransi, menggunakan data dan statistik untuk mendukung klaim.
+
+- **Berdasarkan Perilaku Pelanggan**:
+  - **Jenis Coverage**: Melakukan upselling pada pelanggan dengan coverage dasar (Basic) dengan menawarkan upgrade ke coverage yang lebih komprehensif, menunjukkan manfaat dan perlindungan tambahan yang mereka dapatkan.
+  - **Tipe Polis**: Pelanggan dengan polis tipe "Personal Auto" akan menjadi target utama untuk kampanye, dengan menawarkan manfaat yang lebih spesifik dan disesuaikan dengan kebutuhan individu.
+  - **Kelas Kendaraan**: Memberikan promosi tambahan kepada pemilik kendaraan empat pintu, seperti diskon pada pembelian paket tambahan atau layanan purna jual, mengingat kecenderungan mereka untuk merespons positif terhadap penawaran.
+
+**Rekomendasi untuk Strategi Campaign**:
+- **Integrasi Data dan Teknologi**: Menggunakan analitik canggih untuk terus memonitor dan mengevaluasi efektivitas kampanye, memungkinkan penyesuaian strategi secara real-time berdasarkan respons pelanggan.
+- **Personalisasi Komunikasi**: Mengembangkan pesan yang sangat personalisasi yang resonan dengan segmen target berdasarkan analisis data, meningkatkan relevansi dan resonansi pesan.
+- **Kolaborasi Lintas Fungsi**: Bekerja lintas departemen, seperti antara tim pemasaran dan operasional, untuk memastikan bahwa kampanye disampaikan secara efektif dan manfaatnya dirasakan oleh pelanggan.
+- **Feedback dan Iterasi**: Membangun mekanisme untuk mengumpulkan umpan balik dari pelanggan dan secara berkala meninjau serta menyesuaikan kampanye berdasarkan umpan balik tersebut untuk meningkatkan kepuasan dan retensi pelanggan.
+
+Dengan menerapkan strategi ini, perusahaan asuransi dapat meningkatkan efektivitas pemasaran, meningkatkan penjualan, dan secara signifikan memperkuat hubungan pelanggan.
+
+# REKOMENDASI
+## **Rekomendasi Untuk Model**
+
+- **Integrasi Data yang Lebih Luas**: Volume data yang digunakan dalam analisis ini masih terbatas. Untuk meningkatkan keakuratan model, disarankan untuk mengintegrasikan data dari berbagai sumber tambahan, seperti interaksi layanan pelanggan, aktivitas di media sosial, dan log transaksi yang lebih detail. Pengayaan dataset ini akan membantu dalam memahami perilaku pelanggan secara lebih komprehensif.
+
+- **Pengembangan Fitur Baru**: Untuk mengukur tingkat keterlibatan pelanggan lebih efektif, pengembangan fitur baru seperti click-through rate, durasi sesi, dan frekuensi interaksi dengan berbagai kategori produk sangat disarankan. Fitur-fitur ini akan memberikan wawasan yang lebih dalam mengenai preferensi dan tingkat aktivitas pelanggan.
+
+- **Pemodelan Prediktif untuk Respons Positif**: Berdasarkan analisis yang telah dilakukan, ada potensi untuk mengembangkan model prediktif yang menargetkan pelanggan yang berpotensi merespons positif terhadap kampanye. Model ini dapat membantu dalam menyusun strategi pemasaran yang lebih terfokus dan efektif.
+
+- **Optimasi Hyperparameter**: Meskipun model yang dikembangkan telah menunjukkan recall yang baik, masih ada ruang untuk peningkatan. Disarankan untuk melakukan tuning hyperparameter secara lebih ekstensif dengan menggunakan teknik seperti optimasi Bayesian atau pencarian grid dengan validasi silang. Ini akan membantu dalam menemukan kombinasi parameter yang optimal untuk meningkatkan kinerja model.
+
+- **Penerapan Deep Learning untuk Analisis Sentimen**
+Dalam konteks media sosial dan interaksi layanan pelanggan, model berbasis **deep learning** seperti CNN atau LSTM untuk analisis sentimen bisa sangat berharga. Model ini dapat membantu mengidentifikasi sentimen pelanggan dari data teks, yang bisa menjadi indikator kuat dalam prediksi perilaku pelanggan.
+
+- **Identifikasi dan Penghapusan Outlier** : Identifikasi dan penghapusan outlier yang berfungsi sebagai noise juga sangat penting, analisis lebih lanjut terhadap outlier dapat memberikan wawasan mengenai pengaruhnya terhadap model.
+
+- **Eksplorasi teknik lanjutan** : Seperti neural networks atau deep learning, juga bisa menjadi langkah strategis untuk menangkap pola kompleks dalam data yang mungkin tidak teridentifikasi oleh model tradisional.
+
+- **Evaluasi A/B Testing** : Pelaksanaan A/B testing dengan berbagai versi model sangat dianjurkan untuk mengevaluasi efektivitas dan akurasi model dalam konteks operasional nyata.
+
+
+## **Rekomendasi Untuk Bisnis**
+
+Berdasarkan hasil analisis yang mengesankan dari model XGBoost Classifier dalam memprediksi respons nasabah terhadap kampanye asuransi otomatis, berikut adalah beberapa rekomendasi bisnis yang dapat diimplementasikan untuk meningkatkan efektivitas dan efisiensi strategi pemasaran serta operasional, khususnya dalam meningkatkan respons 'yes' pada kampanye:
+
+1. **Penargetan Kampanye yang Lebih Akurat**: Dengan memanfaatkan kemampuan model untuk memprediksi dengan akurasi tinggi pelanggan yang paling mungkin merespon positif, perusahaan asuransi dapat lebih fokus menargetkan upaya pemasaran mereka pada segmen ini. Hal ini tidak hanya meningkatkan konversi tetapi juga mengoptimalkan penggunaan sumber daya pemasaran, memastikan bahwa kampanye mencapai pelanggan yang paling berpotensi untuk mengatakan 'yes'.
+
+2. **Personalisasi Tawaran**: Menggunakan insight dari variabel penting seperti 'Policy', 'Policy Type', dan 'Vehicle Class', perusahaan dapat menyesuaikan penawaran mereka untuk meningkatkan daya tarik dan relevansi bagi pelanggan individu yang diprediksi akan merespon 'yes'. Penyesuaian ini dapat mencakup premi yang lebih kompetitif, manfaat tambahan yang disesuaikan, atau kondisi polis yang lebih fleksibel, sehingga meningkatkan probabilitas respons positif.
+
+3. **Peningkatan Retensi Pelanggan**: Dengan memanfaatkan model untuk mengidentifikasi pelanggan yang berpotensi merespon 'yes' atau yang mungkin churn, perusahaan dapat proaktif dalam menerapkan strategi retensi yang ditargetkan. Ini bisa berupa komunikasi yang lebih intensif, penawaran khusus, atau program loyalitas yang ditujukan khusus untuk mempertahankan pelanggan berharga ini.
+
+4. **Optimasi Alokasi Anggaran**: Memahami segmen pelanggan yang lebih responsif terhadap kampanye memungkinkan perusahaan untuk mengalokasikan anggaran secara lebih efisien, mengarahkan dana ke inisiatif yang paling mungkin menghasilkan respons 'yes' dan ROI tinggi.
+
+5. **Evaluasi dan Adaptasi Berkelanjutan**: Penting untuk terus mengevaluasi dan menyesuaikan model berdasarkan data terbaru dan umpan balik pelanggan. Pengujian A/B dan analisis respons kampanye harus dilakukan secara berkala untuk memastikan bahwa model tetap relevan dan efektif dalam memprediksi pelanggan yang akan merespon 'yes'.
+
+6. **Penggunaan Data Secara Etis**: Memastikan bahwa semua data yang digunakan untuk melatih model diperoleh dan digunakan dengan cara yang etis dan sesuai dengan regulasi privasi. Menjaga transparansi dengan pelanggan tentang penggunaan data mereka memperkuat kepercayaan dan memastikan kepatuhan terhadap norma-norma etika.
+
+7. **Segmentasi Pasar yang Ditingkatkan**: Model membantu mengidentifikasi nuansa karakteristik pelanggan yang mungkin tidak segera jelas, memungkinkan segmentasi pasar yang lebih mendalam. Strategi pemasaran yang lebih terpersonalisasi dapat dikembangkan untuk menargetkan pelanggan yang lebih mungkin untuk merespon 'yes', meningkatkan efektivitas keseluruhan kampanye.
+
+Dengan mengimplementasikan rekomendasi ini, perusahaan asuransi tidak hanya dapat meningkatkan jumlah respons 'yes' dalam kampanye mereka, tetapi juga meningkatkan kepuasan pelanggan, memperkuat loyalitas, dan secara keseluruhan meningkatkan kinerja bisnis.
